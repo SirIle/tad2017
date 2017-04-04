@@ -46,7 +46,9 @@ Publish to the configured AWS account (configured through aws-cli)
 npm deploy
 ```
 
-The example should deploy and display the URL that can be used to call it. If there's an error, contact one of the presenters.
+The example should deploy and display the URL that can be used to call it. Open your browser and try calling the method.
+
+If there's an error, contact one of the presenters.
 
 ## Offline-capability
 
@@ -55,6 +57,8 @@ Install offline-plugin
 ```bash
 npm install --save-dev serverless serverless-offline
 ```
+
+
 
 Edit _serverless.yml_ and add to the end of the file
 
@@ -76,3 +80,5 @@ This command should be added into the _package.json_ under scripts so that it ca
 ```
 
 and then the offline-server can be started with `npm start`.
+
+Try calling the method running on localhost through the browser.
