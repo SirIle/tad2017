@@ -1,0 +1,10 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "space-before-function-paren": ["error", { "asyncArrow": "ignore", "named": "never"}]
+  }
+}
+

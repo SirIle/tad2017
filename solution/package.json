@@ -1,0 +1,33 @@
+{
+  "name": "tad",
+  "version": "1.0.0",
+  "description": "first serverless ever!",
+  "main": "handler.js",
+  "scripts": {
+    "test": "test",
+    "start": "sls offline",
+    "test": "mocha",
+    "lint": "eslint --fix ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-es2017": "^6.22.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.2.0",
+    "request-json": "^0.6.1",
+    "serverless": "^1.10.2",
+    "serverless-offline": "^3.13.2",
+    "serverless-webpack": "^1.0.0-rc.4"
+  }
+}
