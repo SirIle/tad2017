@@ -78,12 +78,12 @@ Create a new _.eslint_ file at the project root level
 
 ```json
 {
-  "env": {
-    "mocha": true
+  "env": {
+    "mocha": true
   },
-  "extends": "airbnb",
-  "rules": {
-    "space-before-function-paren": ["error", { "asyncArrow": "ignore", "named": "never"}]
+  "extends": "airbnb",
+  "rules": {
+    "space-before-function-paren": ["error", { "asyncArrow": "ignore", "named": "never"}]
   }
 }
 ```
