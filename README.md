@@ -71,7 +71,7 @@ Locally the WebPack based version can be run with `sls offline --location .webpa
 Install the packages
 
 ```bash
-npm --save-dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y babel-eslint eslint-plugin-react eslint-plugin-import
+npm install --save-dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y babel-eslint eslint-plugin-react eslint-plugin-import
 ```
 
 Create a new _.eslint_ file at the project root level
