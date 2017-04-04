@@ -38,12 +38,12 @@ Edit _serverless.yml_ and add under the line `handler: handler.hello` on the sam
 
 ## Publish and test that it works from outside
 
-Edit _serverless.yml_ and change the default region to for example `eu-west-1`.
+Edit _serverless.yml_ and change the default region to for example `eu-west-1` (serverless doesn't work in eu-central-1a/b/c, so use eu-west-1 to avoid trouble)
 
 Publish to the configured AWS account (configured through aws-cli)
 
 ```bash
-npm deploy
+sls deploy
 ```
 
 The example should deploy and display the URL that can be used to call it. Open your browser and try calling the method.
