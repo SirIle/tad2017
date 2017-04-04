@@ -24,7 +24,7 @@ This document describes the hands-on session assignment and set-up information
     * Install nodejs
       * the EC2 instance doesn't have the right repositories for node, so add them by running "curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -"
       * run "sudo yum -y install nodejs" to install nodejs
-    * To make sure your EC2 instance is properly set-up, go to AWS and check from the Services that there's on VPC created, and that that VPC has an Internet Gateway set-up as well. AWS should do these automatically when launching the EC2 instance in the first step, but if not, these can be fixed. Just ask for help!
+    * To make sure your EC2 instance is properly set-up, go to AWS and check from the Services that there's a VPC created, and that that VPC has an Internet Gateway set-up as well. AWS should do these automatically when launching the EC2 instance in the first step, but if not, these can be fixed. Just ask for help!
     
 * Configured aws-cli
 * (Optional) Visual Studio for Code with Beautify and ESLint plugins installed
