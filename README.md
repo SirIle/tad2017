@@ -19,7 +19,7 @@ This document describes the hands-on session assignment and set-up information
     * Go to AWS, and select IAM from the Services
       * Create a user with administrator rights
       * Go to the user, and click on security credentials and create an access key
-      * Download the access key csv to store the credentials. NOTE! This is the only time you get to do this, if you don't donwload or write them down, you'll need to create a new one later, if you forget them
+      * Download the access key csv to store the credentials. NOTE! This is the only time you get to do this, if you don't download or write them down, you'll need to create a new one later, if you forget them
     * Log into your EC2 (if not still logged), and run “aws configure”, and then give the previously created access and secret access keys (copy/paste from the .csv)
     * Install nodejs
       * the EC2 instance doesn't have the right repositories for node, so add them by running "curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -"
