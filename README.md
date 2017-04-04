@@ -4,81 +4,64 @@ Helsinki TechArch Day 2017 hands-on for Serverless
 
 ## General
 
-This document describes the hands-on session assignment and set-up information
+This document describes the second part of the hands-on session assignment
 
-## Prerequisites
+## Set webpack as the packaging system and take babel into use
 
-* A configured AWS account (set-up information here)
-* Installed tooling (set-up information on Mac and Windows)
-* Configured aws-cli
-* (Optional) Visual Studio for Code with Beautify and ESLint plugins installed
-
-## Creating the project
-
-Create the directory and initialize the Serverless project
+Install the required packages
 
 ```bash
-sudo npm install -g serverless
-mkdir tad
-cd tad
-sls create --template aws-nodejs
-npm init
+npm install --save-dev serverless-webpack babel-loader babel-polyfill babel-preset-es2015 babel-preset-es2017
 ```
 
-## Add route to the example to enable http-calls
-
-Edit _serverless.yml_ and add under the line `handler: handler.hello` on the same indentation level
+Edit _serverless.yml_ and add a custom section (at root level)
 
 ```yml
-    events:
-      - http:
-          path: hello
-          method: get
+	custom:
+	  serverless-offline:
+	    babelOptions:
+      presets: ["es2017", "es2015"]
 ```
 
-## Publish and test that it works from outside
-
-Edit _serverless.yml_ and change the default region to for example `eu-west-1`.
-
-Publish to the configured AWS account (configured through aws-cli)
-
-```bash
-npm deploy
-```
-
-The example should deploy and display the URL that can be used to call it. Open your browser and try calling the method.
-
-If there's an error, contact one of the presenters.
-
-## Offline-capability
-
-Install offline-plugin
-
-```bash
-npm install --save-dev serverless serverless-offline
-```
-
-
-
-Edit _serverless.yml_ and add to the end of the file
-
+Also add to the end of the file another plugin definition
 ```yml
-plugins:
-  - serverless-offline
+	serverless-webpack
 ```
 
-The offline-version can be started by running
-
-```bash
-sls offline
-```
-
-This command should be added into the _package.json_ under scripts so that it can be run more easily. Add the line
+Add a new file _.babelrc_ to the project root
 
 ```json
-    "start": "sls offline"
+{
+  "presets": ["es2015", "es2017"]
+}
 ```
 
-and then the offline-server can be started with `npm start`.
+Create a new file _.webpack.config.js_ at the project root level
 
-Try calling the method running on localhost through the browser.
+```javascript
+module.exports = {
+  entry: [
+    'babel-polyfill', './handler.js',
+  ],
+  target: 'node',
+  externals: [
+    'aws-sdk', // aws-sdk included in Lambda
+  ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      include: __dirname,
+      exclude: [/node_modules/],
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader',
+    }],
+  },
+};
+```
+
+Then test that the packing works and that the new packaged version deploys correctly with `sls deploy`. To just pack
+the function, use `sls webpack`.
+
+Locally the WebPack based version can be run with `sls offline --location .webpack`.
