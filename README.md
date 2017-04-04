@@ -11,8 +11,8 @@ This document describes the hands-on session assignment and set-up information
 * A configured AWS account (set-up information here)
 * Installed tooling (set-up information on Mac and Windows)
   * Mac:
-    * Log into AWS, click Launch EC2 instance
-    * Select Amazon Linux 64-bit / t.micro (free tier)
+    * Log into AWS, from the frontpage's Build a solution box, click "Launch a virtual Machine with EC2", or go to Services and select EC2 and launch it from there
+    * Select Amazon Linux 64-bit / t2.micro (free tier)
     * Create key pair and download .pem file. Change the permission of the .pem file to 400 with “chmod 400 'filename'.pem”
     * From your EC2 instance in AWS, click connect and copypaste the ssh command to your Terminal
     * Once connected to your EC2 instance, run ”pip install --upgrade --user awscli” to install aws-cli command line tool.
