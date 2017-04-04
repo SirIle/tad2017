@@ -36,7 +36,7 @@ Add a new file _.babelrc_ to the project root
 }
 ```
 
-Create a new file _.webpack.config.js_ at the project root level
+Create a new file _webpack.config.js_ at the project root level
 
 ```javascript
 module.exports = {
