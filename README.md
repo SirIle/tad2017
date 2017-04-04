@@ -74,7 +74,7 @@ Install the packages
 npm install --save-dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y babel-eslint eslint-plugin-react eslint-plugin-import
 ```
 
-Create a new _.eslint_ file at the project root level
+Create a new _.eslintrc_ file at the project root level
 
 ```json
 {
