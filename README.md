@@ -17,15 +17,15 @@ npm install --save-dev serverless-webpack babel-loader babel-polyfill babel-pres
 Edit _serverless.yml_ and add a custom section (at root level)
 
 ```yml
-	custom:
-	  serverless-offline:
-	    babelOptions:
-      presets: ["es2017", "es2015"]
+custom:
+  serverless-offline:
+    babelOptions:
+      presets: ["es2017", "es2015"]
 ```
 
 Also add to the end of the file another plugin definition
 ```yml
-	serverless-webpack
+  - serverless-webpack
 ```
 
 Add a new file _.babelrc_ to the project root
@@ -65,3 +65,36 @@ Then test that the packing works and that the new packaged version deploys corre
 the function, use `sls webpack`.
 
 Locally the WebPack based version can be run with `sls offline --location .webpack`.
+
+## Adding linting and AirBnB rules
+
+Install the packages
+
+```bash
+npm --save-dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y babel-eslint eslint-plugin-react eslint-plugin-import
+```
+
+Create a new _.eslint_ file at the project root level
+
+```json
+{
+    "env": {
+        "mocha": true
+    },
+    "extends": "airbnb",
+    "rules": {
+        "space-before-function-paren": ["error", { "asyncArrow": "ignore", "named": "never"}]
+    }
+}
+```
+
+The exception to the rules has been added because JSBeautify doesn't add space after async keyword correctly.
+
+In the _package.json_ scripts section add
+
+```json
+    "lint": "eslint --fix ."
+```
+
+Now you can test running the linting with `npm run lint` and it should also work in Visual Studio for Code if the ESLint plugin has been installed.
+
