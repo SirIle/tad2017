@@ -20,6 +20,6 @@ or go to Services and select EC2 and launch it from there
 * run `curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -`
 * run `sudo yum -y install nodej` to install nodejs
 
-## Check that everything words
+## Check that everything works
 
 To make sure your EC2 instance is properly set-up, go to AWS and check from the Services that there's a VPC created, and that that VPC has an Internet Gateway set-up as well. AWS should do these automatically when launching the EC2 instance in the first step, but if not, these can be fixed. Just ask for help!
