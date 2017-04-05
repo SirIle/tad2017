@@ -12,13 +12,6 @@ or go to Services and select EC2 and launch it from there
 
 * Once connected to your EC2 instance, run `pip install --upgrade --user awscli` to install aws-cli command line tool.
 
-## Create a user and access key
-
-* Go to AWS, and select IAM from the Services
-* Create a user with administrator rights
-* Go to the user, and click on security credentials and create an access key
-* Download the access key csv to store the credentials. NOTE! This is the only time you get to do this, if you don't download or write them down, you'll need to create a new one later, if you forget them
-
 ## Configure the aws-cli
 
 * Log into your EC2 (if not still logged), and run `aws configure`, and then give the previously created access and secret access keys (copy/paste from the .csv)
