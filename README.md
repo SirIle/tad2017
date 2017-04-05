@@ -11,6 +11,16 @@ This document describes the hands-on session assignment and set-up information
 * A configured AWS account (set-up information here)
 * Installed tooling (set-up information on Mac and Windows)
   * Mac:
+    * Local setup:
+    * In your terminal create a folder by running "mkdir tad2017" and cd into it
+      * Install nodejs:   
+        * with Brew: "brew install node"
+        * manually: download https://nodejs.org/dist/v6.10.2/node-v6.10.2.pkg and run the installer
+      * Install aws-cli:
+        * with Brew: "brew install awscli"
+        * manually: check the instruction from http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html  
+    
+    * Plan B, do this in AWS EC2 if it doesn't work locally:
     * Log into AWS, from the frontpage's Build a solution box, click "Launch a virtual Machine with EC2", or go to Services and select EC2 and launch it from there
     * Select Amazon Linux 64-bit / t2.micro (free tier)
     * Create key pair and download .pem file. Change the permission of the .pem file to 400 with “chmod 400 'filename'.pem”
