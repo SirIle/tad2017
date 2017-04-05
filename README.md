@@ -16,6 +16,7 @@ This document describes the hands-on session assignment and set-up information
 * Installed tooling (set-up information on Mac and Windows)
   * Mac: https://github.com/SirIle/tad2017/blob/master/mac-setup-guide.md
   * Windows: 
+  * If for some reason the tools don't work locally, you can also (set them up in EC2)[https://github.com/SirIle/tad2017/blob/master/ec2-setup-guide.md]
   * **Remember to configure aws-cli with the keys!**
 * (Optional) Visual Studio for Code with Beautify and ESLint plugins installed
 
