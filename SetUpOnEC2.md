@@ -5,12 +5,12 @@
 * Log into AWS, from the frontpage's Build a solution box, click "Launch a virtual Machine with EC2",
 or go to Services and select EC2 and launch it from there
 * Select Amazon Linux 64-bit / t2.micro (free tier)
-* Create key pair and download .pem file. Change the permission of the .pem file to 400 with chmod 400 'filename'.pem`
+* Create key pair and download .pem file. Change the permission of the .pem file to 400 with `chmod 400 'filename'.pem`
 * From your EC2 instance in AWS, click connect and copypaste the ssh command to your Terminal
 
 ## Install awscli
 
-* Once connected to your EC2 instance, run `pip install --upgrade --user awscli to install aws-cli command line tool.
+* Once connected to your EC2 instance, run `pip install --upgrade --user awscli` to install aws-cli command line tool.
 
 ## Create a user and access key
 
@@ -21,7 +21,7 @@ or go to Services and select EC2 and launch it from there
 
 ## Configure the aws-cli
 
-* Log into your EC2 (if not still logged), and run “aws configure”, and then give the previously created access and secret access keys (copy/paste from the .csv)
+* Log into your EC2 (if not still logged), and run `aws configure`, and then give the previously created access and secret access keys (copy/paste from the .csv)
 
 ## Install nodejs
 * run `curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -`
