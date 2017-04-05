@@ -8,11 +8,15 @@ This document describes the hands-on session assignment and set-up information
 
 ## Prerequisites
 
-* A configured AWS account (set-up information here)
+* A configured AWS account with a suitable user and access keys
+  - Go to AWS, and select IAM from the Services
+  - Create a user with administrator rights
+  - Go to the user, and click on security credentials and create an access key
+  - Download the access key csv to store the credentials. NOTE! This is the only time you get to do this, if you don't download or write them down, you'll need to create a new one later, if you forget them
 * Installed tooling (set-up information on Mac and Windows)
   * Mac: https://github.com/SirIle/tad2017/blob/master/mac-setup-guide.md
-    
-* Configured aws-cli
+  * Windows: 
+  * **Remember to configure aws-cli with the keys!**
 * (Optional) Visual Studio for Code with Beautify and ESLint plugins installed
 
 ## Creating the project
