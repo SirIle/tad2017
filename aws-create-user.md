@@ -30,7 +30,7 @@
 ![Add user group](https://github.com/SirIle/tad2017/blob/master/images/aws-add-group.png)
 
 
-* Click Download .csv to download secrect access id and key
+* Click Download .csv to download secrect access id and key (NOTE! This is the only time you're able to download or note down the access secret, otherwise you'll have to create a new one, if you forget it!)
 
 ![Download csv](https://github.com/SirIle/tad2017/blob/master/images/aws-download-key-csv.png)
 
