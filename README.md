@@ -11,7 +11,7 @@ This document describes the second part of the hands-on session assignment
 Install the required packages
 
 ```bash
-npm install --save-dev serverless-webpack babel-loader babel-polyfill babel-preset-es2015 babel-preset-es2017
+npm install --save-dev serverless-webpack babel-loader babel-polyfill babel-preset-env
 ```
 
 Edit _serverless.yml_ and add a custom section (at root level)
@@ -20,7 +20,7 @@ Edit _serverless.yml_ and add a custom section (at root level)
 custom:
   serverless-offline:
     babelOptions:
-      presets: ["es2017", "es2015"]
+      presets: ["env"]
 ```
 
 Also add to the end of the file another plugin definition
@@ -32,7 +32,7 @@ Add a new file _.babelrc_ to the project root
 
 ```json
 {
-  "presets": ["es2015", "es2017"]
+  "presets": ["env"]
 }
 ```
 
@@ -71,7 +71,7 @@ Locally the WebPack based version can be run with `sls offline --location .webpa
 Install the packages
 
 ```bash
-npm install --save-dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y babel-eslint eslint-plugin-react eslint-plugin-import
+npm install --save-dev eslint eslint-config-airbnb-base babel-eslint eslint-plugin-import
 ```
 
 Create a new _.eslintrc_ file at the project root level
@@ -81,7 +81,7 @@ Create a new _.eslintrc_ file at the project root level
   "env": {
     "mocha": true
   },
-  "extends": "airbnb",
+  "extends": "airbnb-base",
   "rules": {
     "space-before-function-paren": ["error", { "asyncArrow": "ignore", "named": "never"}]
   }
