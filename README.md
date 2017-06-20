@@ -79,6 +79,7 @@ Create a new _.eslintrc_ file at the project root level
 ```json
 {
   "env": {
+    "node": true,
     "mocha": true
   },
   "extends": "airbnb-base",
