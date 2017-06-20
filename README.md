@@ -156,7 +156,7 @@ Create a new file for the tests, for example _test/test.js_
 ```javascript
 import chai from 'chai';
 import rest from 'request-json';
-import cp from 'child_process';
+import Serverless from 'serverless'
 
 chai.should();
 const client = rest.createClient('http://localhost:3000/');
@@ -165,15 +165,14 @@ const URL = 'hello';
 describe('Test the function', () => {
   // Start the server
   before(async() => {
-    logger.info('Start serverless-offline')
-    process.argv = ['', '', 'offline']
-    const serverless = new Serverless()
-    serverless.init().then(() => serverless.run())
+    process.argv = ['', '', 'offline'];
+    const serverless = new Serverless();
+    serverless.init().then(() => serverless.run());
     // Wait for server to start
     while (await new Promise(resolve => client.head('/', err => resolve(err)))) { // eslint-disable-line no-await-in-loop
-      await new Promise(resolve => setTimeout(resolve, 1000)) // eslint-disable-line no-await-in-loop
+      await new Promise(resolve => setTimeout(resolve, 1000)); // eslint-disable-line no-await-in-loop
     }
-  })
+  });
 
   it('Hello-method returns http status code 200', (done) => {
     client.get(`${URL}`, (err, res) => {
