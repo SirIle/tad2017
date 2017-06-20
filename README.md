@@ -158,21 +158,22 @@ import chai from 'chai';
 import rest from 'request-json';
 import cp from 'child_process';
 
-/* eslint-disable no-await-in-loop */
-
 chai.should();
 const client = rest.createClient('http://localhost:3000/');
 const URL = 'hello';
 
 describe('Test the function', () => {
-  let server;
-
-  before(async() => {
-    server = cp.exec('npm start');
-    while (await new Promise(resolve => client.head('/', err => resolve(err)))) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-  });
+  // Start the server
+  before(async() => {
+    logger.info('Start serverless-offline')
+    process.argv = ['', '', 'offline']
+    const serverless = new Serverless()
+    serverless.init().then(() => serverless.run())
+    // Wait for server to start
+    while (await new Promise(resolve => client.head('/', err => resolve(err)))) { // eslint-disable-line no-await-in-loop
+      await new Promise(resolve => setTimeout(resolve, 1000)) // eslint-disable-line no-await-in-loop
+    }
+  })
 
   it('Hello-method returns http status code 200', (done) => {
     client.get(`${URL}`, (err, res) => {
@@ -180,8 +181,6 @@ describe('Test the function', () => {
       done();
     });
   });
-
-  after(() => server.kill());
 });
 ```
 
